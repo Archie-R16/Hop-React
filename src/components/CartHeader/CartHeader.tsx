@@ -1,12 +1,17 @@
 import './CartHeader.scss'
 
-type Props = {}
+type Props = {
+    cartData: {
+        totolCount: number
+        totolPrise: number
+    }
+}
 
-const CartHeader = (props: Props) => {
+const CartHeader = ({ cartData }: Props) => {
     return (
         <div>
-            <div>0</div>
-            <div>$ 0</div>
+            <div>{cartData.totolCount}</div>
+            <div>$ {cartData.totolPrise}</div>
         </div>
     )
 }
