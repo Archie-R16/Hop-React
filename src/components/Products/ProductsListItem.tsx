@@ -34,11 +34,11 @@ const ProductsListItems = ({
     }
     const changeColor = () => {
         // setColor((prevState: string) =>
-        //     prevState === 'green'? 'blak' : 'green'
+        //     prevState === 'green'? 'black' : 'green'
         // )
         setColor((prevState: string) => {
             if (prevState === 'green') {
-                return 'blac'
+                return 'black'
             } else {
                 return 'green'
             }
@@ -64,7 +64,7 @@ const ProductsListItems = ({
                     <span>Praice:</span>
                     {prais}$
                 </div>
-                <p>Color: {color}</p>
+                <p className={`${color}`}>Color: {color}</p>
                 <button onClick={changeColor}>Change color</button>
                 <div className="product-quantity">
                     <Button
