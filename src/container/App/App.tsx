@@ -14,11 +14,17 @@ const App = () => {
         2: 1,
     })
 
-    const addProductToCart = (count: number, prais: number) => {}
+    const addProductToCart = (id: number, count: number) => {
+        seatProductsInCart((prevState: productsInCart) => ({
+            ...prevState,
+            [id]: prevState[id] + count,
+        }))
+    }
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
+            <button onClick={() => addProductToCart(1, 1)}>Add to cart</button>
             <Main addProductToCart={addProductToCart} />
         </StyledEngineProvider>
     )
