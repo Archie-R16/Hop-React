@@ -4,27 +4,37 @@ import { StyledEngineProvider } from '@mui/material/styles'
 import Main from 'container/Main/Main'
 import { useState } from 'react'
 
-type productsInCart = {
+type ProductsInCart = {
     [id: number]: number
 }
 
 const App = () => {
-    const [productsInCart, seatProductsInCart] = useState<productsInCart>({
+    const [productsInCart, seatProductsInCart] = useState<ProductsInCart>({
         1: 5,
         2: 1,
     })
 
     const addProductToCart = (id: number, count: number) => {
-        seatProductsInCart((prevState: productsInCart) => ({
+        seatProductsInCart((prevState: ProductsInCart) => ({
             ...prevState,
             [id]: (prevState[id] || 0) + count,
         }))
     }
+
+    const removProductFromCart = (id: number) =>
+        seatProductsInCart((prevState: ProductsInCart) => {
+            let prevProductsInCart = { ...prevState }
+            delete prevProductsInCart[id]
+            return prevProductsInCart
+        })
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
-
+            <button onClick={() => removProductFromCart(1)}>
+                Delete product
+            </button>
             <Main
                 addProductToCart={addProductToCart}
                 productsInCart={productsInCart}
