@@ -6,7 +6,7 @@ export type ProductProps = {
     desc: string
     type: string
     capasiti: string
-    prais: number
+    price: number
     image:string
 }
 
@@ -18,7 +18,7 @@ const productsArray:ProductProps[] = [
         desc:'Thes is iPhone 14pro',
         type:'phone',
         capasiti:'256',
-        prais:1000,
+        price:1000,
         image:"/images/iphon-purple.jpg"
     },
     {
@@ -27,7 +27,7 @@ const productsArray:ProductProps[] = [
         desc:'Thes is iPhone 13',
         type:'phone',
         capasiti:'128',
-        prais:500,
+        price:500,
         image:"/images/iphon-gold.jpg"
     },
     {
@@ -36,7 +36,7 @@ const productsArray:ProductProps[] = [
         desc:'Thes is iPhone 13',
         type:'phone',
         capasiti:'64',
-        prais:2000,
+        price:2000,
         image:"/images/iphon-green.jpg"
     },
     {
@@ -45,7 +45,7 @@ const productsArray:ProductProps[] = [
         desc:'Thes is iPhone 11pro',
         type:'phone',
         capasiti:'256',
-        prais:1000,
+        price:1000,
         image:"/images/iphon-whit.jpg"
     },
     {
@@ -54,7 +54,7 @@ const productsArray:ProductProps[] = [
         desc:'Thes is iPhone 13pro Max',
         type:'phone',
         capasiti:'512',
-        prais:1500,
+        price:1500,
         image:"/images/iphon-red.jpg"
     },
     {
@@ -63,7 +63,7 @@ const productsArray:ProductProps[] = [
         desc:'Thes is iPhone X',
         type:'phone',
         capasiti:'64',
-        prais:500,
+        price:500,
         image:"/images/iphon-blak.jpg"
     },
 ]

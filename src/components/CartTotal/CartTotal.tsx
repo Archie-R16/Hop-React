@@ -24,7 +24,7 @@ const CartTotal = ({
                 (total, productId) =>
                     total +
                     productsInCart[parseInt(productId)] *
-                        productsObject[parseInt(productId)].prais,
+                        productsObject[parseInt(productId)].price,
                 0
             )}{' '}
             $
