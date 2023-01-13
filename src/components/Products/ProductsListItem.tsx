@@ -8,21 +8,25 @@ import {
 import { useState } from 'react'
 import './ProductsListItem.scss'
 type Props = {
+    id: number
     title: string
     desc: string
     type: string
     capasiti: string
     prais: number
     image: string
+    addProductToCart: (id: number, count: number) => void
 }
 
 const ProductsListItems = ({
+    id,
     title,
     desc,
     type,
     capasiti,
     prais,
     image,
+    addProductToCart,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
     const noIncrementClick = () => {
@@ -70,7 +74,12 @@ const ProductsListItems = ({
                 </div>
             </CardContent>
             <CardActions className="btns-wrap">
-                <Button variant="outlined">Add to cart</Button>
+                <Button
+                    variant="outlined"
+                    onClick={() => addProductToCart(id, count)}
+                >
+                    Add to cart
+                </Button>
             </CardActions>
         </Card>
     )
