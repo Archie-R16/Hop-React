@@ -1,5 +1,5 @@
 import Container from '@mui/material/Container'
-import Home from 'container/pages/Home/Home'
+import Home from 'pages/Home/Home'
 
 type Props = {}
 

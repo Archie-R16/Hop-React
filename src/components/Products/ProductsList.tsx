@@ -1,5 +1,16 @@
 import { Grid } from '@mui/material'
+import productsArray from 'utils/productsArray'
 import ProductsListItem from './ProductsListItem'
+
+type ProductProps = {
+    id: number
+    title: string
+    desc: string
+    type: string
+    capasiti: string
+    prais: number
+    image: string
+}
 
 type Props = {}
 
@@ -13,33 +24,28 @@ const ProductsList = (props: Props) => {
                 alignItems="center"
                 spacing={4}
             >
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductsListItem
-                        title="iPhon X"
-                        desc="Thes iPhpn X"
-                        type="phone"
-                        capasiti="64"
-                        prais={500}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductsListItem
-                        title="iPhon 14 pro"
-                        desc="Thes iPhpn 14pro"
-                        type="phone"
-                        capasiti="128"
-                        prais={1500}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductsListItem
-                        title="iPhon 12"
-                        desc="Thes iPhpn 12"
-                        type="phone"
-                        capasiti="512"
-                        prais={2000}
-                    />
-                </Grid>
+                {productsArray.map(
+                    ({
+                        id,
+                        title,
+                        desc,
+                        type,
+                        capasiti,
+                        prais,
+                        image,
+                    }: ProductProps) => (
+                        <Grid item xs={12} sm={6} md={4} key={id}>
+                            <ProductsListItem
+                                title={title}
+                                desc={desc}
+                                type={type}
+                                capasiti={capasiti}
+                                prais={prais}
+                                image={image}
+                            />
+                        </Grid>
+                    )
+                )}
             </Grid>
         </>
     )
