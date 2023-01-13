@@ -13,7 +13,7 @@ type Props = {
     desc: string
     type: string
     capasiti: string
-    prais: number
+    price: number
     image: string
     addProductToCart: (id: number, count: number) => void
 }
@@ -24,7 +24,7 @@ const ProductsListItems = ({
     desc,
     type,
     capasiti,
-    prais,
+    price,
     image,
     addProductToCart,
 }: Props) => {
@@ -52,8 +52,8 @@ const ProductsListItems = ({
                     <span>Capasity:</span> {capasiti}Gb
                 </div>
                 <div className="product-price">
-                    <span>Praice:</span>
-                    {prais}$
+                    <span>Price:</span>
+                    {price}$
                 </div>
                 <div className="product-quantity">
                     <Button

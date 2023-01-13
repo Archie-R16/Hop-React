@@ -8,7 +8,7 @@ type ProductProps = {
     desc: string
     type: string
     capasiti: string
-    prais: number
+    price: number
     image: string
 }
 
@@ -33,7 +33,7 @@ const ProductsList = ({ addProductToCart }: Props) => {
                         desc,
                         type,
                         capasiti,
-                        prais,
+                        price,
                         image,
                     }: ProductProps) => (
                         <Grid item xs={12} sm={6} md={4} key={id}>
@@ -43,7 +43,7 @@ const ProductsList = ({ addProductToCart }: Props) => {
                                 desc={desc}
                                 type={type}
                                 capasiti={capasiti}
-                                prais={prais}
+                                price={price}
                                 image={image}
                                 addProductToCart={addProductToCart}
                             />
